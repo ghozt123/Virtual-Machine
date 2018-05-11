@@ -50,11 +50,10 @@ int execute(int instructions[], int size)
 
 	for(program_counter = 0; program_counter < size; program_counter++)
 	{
-		operand1 = (instructions[program_counter] >> 24) & 0xff;
+	operand1 = (instructions[program_counter] >> 24) & 0xff;
         operand2 = (instructions[program_counter] >> 16) & 0xff;
         operand3 = (instructions[program_counter] >> 8) & 0xff;
 
-        // get most significant byte (opcode)
         opcode = (instructions[program_counter] >> 24) & 0xff;
 
 		execute_instructions(opcode, operand1, operand2, operand3);
